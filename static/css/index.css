@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+header{
+    width:100%;
+    height:auto;
+}
+header .top{
+    width:auto;
+    height:62px;
+    background-color:#f3f3f3;
+}
+header .top .con{
+    width:1176px;
+    height:62px;
+    margin:0 auto;
+}
+header .top .con div{
+    float:right;
+}
+header .top .con div:nth-child(3){
+    line-height:62px;
+}
+header .top .con div:nth-child(2){
+    border:1px solid #333;
+    width:124px;
+    height:30px;
+    border-radius:15px;
+    text-align: center;
+    line-height:30px;
+    margin-top:15px;
+    margin-left:5px;
+}
+header .top .con div:nth-child(2) span{
+    margin:0 10px;
+}
+header .logoBox{
+    width:1176px;
+    height:104px;
+    background-color:lightgreen;
+    margin:0 auto;
+    /* 上下  左右*/
+    /*让块级元素在父元素中水平居中*/
+}
