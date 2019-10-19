@@ -44,17 +44,19 @@
     </div>
     <h3>添加新品</h3>
     <div class="formBox">
-        标题:
-        <input type="text" name="title1"> <br>
-        副标题:
-        <input type="text" name="title2"> <br>
-        简介:
-        <input type="text" name="info"> <br>
-        价位:
-        <input type="text" name="price"> <br>
-        图片:
-        <input type="file" name="img"> <br>
-        <button>提交</button>
+        <form action="/addgoods" method="post" enctype="multipart/form-data">
+            标题:
+            <input type="text" name="title"> <br>
+            副标题:
+            <input type="text" name="title2"> <br>
+            简介:
+            <input type="text" name="info"> <br>
+            价位:
+            <input type="text" name="price"> <br>
+            图片:
+            <input type="file" name="img"> <br>
+            <button>提交</button>
+        </form>
     </div>
 </body>
 </html>
