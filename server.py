@@ -1,16 +1,35 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect
 import pymysql
 # 实例化web服务器
 app = Flask(__name__)
+
+db = pymysql.connect(
+    host="localhost",
+    port=3306,
+    user="root",
+    password="123456",
+    database="yd2"
+)
+
+
 # 创建首页的路由
 @app.route("/")
 def index():
-    return render_template("index.html")
+    cursor = db.cursor()
+    sql = "select * from goods"
+    cursor.execute(sql)
+    data = cursor.fetchall()
+    return render_template("index.html",data=data)
 
 # 创建后台的路由
 @app.route("/admin")
 def admin():
-    return render_template("admin.html")
+    cursor = db.cursor()
+    sql = "select * from goods"
+    cursor.execute(sql)
+    data = cursor.fetchall()
+    print(data)
+    return render_template("admin.html",data=data)
 
 @app.route("/addgoods",methods=['POST'])
 def addgoods():
@@ -22,7 +41,15 @@ def addgoods():
     filename = "static/upload/"+file.filename
     file.save(filename)
     print(title,title2,info,price)
-    return "1"
+
+    # 创建游标
+    cursor = db.cursor()
+    sql = "insert into goods (title,title2,info,price,img) values ('%s','%s','%s','%s','%s')"%(title,title2,info,price,filename)
+    cursor.execute(sql)
+    db.commit()
+
+    # 重定向
+    return redirect("/admin")
 
 
 if __name__ == "__main__":

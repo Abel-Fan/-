@@ -12,6 +12,7 @@
 </head>
 <body>
     <h3>新品推荐</h3>
+
     <div class="tableBox">
         <table class="table table-striped table-bordered">
         <tr>
@@ -23,13 +24,16 @@
             <th>图片</th>
             <th>操作</th>
         </tr>
+            {%  for item in data %}
         <tr>
-            <th>1</th>
-            <th>沙发1</th>
-            <th>沙发1</th>
-            <th>阿斯顿发了公司的</th>
-            <th>450.00</th>
-            <th>图片</th>
+            <th>{{ item[0] }}</th>
+            <th>{{ item[1] }}</th>
+            <th>{{ item[2] }}</th>
+            <th>{{ item[3] }}</th>
+            <th>{{ item[4] }}</th>
+            <th>
+                <img src="{{item[5]}}" alt="" width="100">
+            </th>
             <th>
 
                 <button type="button" class="btn btn-danger">
@@ -40,6 +44,7 @@
                 </button>
             </th>
         </tr>
+            {% endfor %}
     </table>
     </div>
     <h3>添加新品</h3>

@@ -76,40 +76,62 @@
 <!--New 新品首发-->
     <div class="new">
         <h4></h4>
+<!--        <div class="con">-->
+<!--            <div class="imgBox">-->
+<!--                <img src="../static/img/index/h1.png" alt="" width="580">-->
+<!--            </div>-->
+<!--            <div class="info">-->
+<!--                <h5>HENRIKSDAL 亨利克</h5>-->
+<!--                <h6>椅子，桦木，格雷伯，白色</h6>-->
+<!--                <div class="text">-->
+<!--                    愉快地享用完漫长的餐点后，如果桌布 椅套可以清洗，那可真是美事一桩。HENRIKSDAL 亨利克 可能 是我们最舒适的椅子了！-->
+<!--                </div>-->
+<!--                <div class="price">-->
+<!--                    <span>RMB</span>-->
+<!--                    <span>459.00</span>-->
+<!--                </div>-->
+<!--                <div class="btn">Buy</div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="con2">-->
+<!--            <div class="info">-->
+<!--                <h5>HENRIKSDAL</h5>-->
+<!--                <h6>椅子，桦木，格雷伯，白色</h6>-->
+<!--                <div class="text">-->
+<!--                    愉快地享用完漫长的餐点后，如果桌布 椅套可以清洗，那可真是美事一桩。HENRIKSDAL 亨利克 可能 是我们最舒适的椅子了！-->
+<!--                </div>-->
+<!--                <div class="price">-->
+<!--                    <span>RMB</span>-->
+<!--                    <span>459.00</span>-->
+<!--                </div>-->
+<!--                <div class="btn">Buy</div>-->
+<!--            </div>-->
+<!--            <div class="imgBox">-->
+<!--                <img src="../static/img/index/h2.png" alt="" width="780">-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+        {% for item in data%}
         <div class="con">
             <div class="imgBox">
-                <img src="../static/img/index/h1.png" alt="" width="580">
+                <img src="{{ item[5] }}" alt="" width="580" height="560">
             </div>
             <div class="info">
-                <h5>HENRIKSDAL 亨利克</h5>
-                <h6>椅子，桦木，格雷伯，白色</h6>
+                <h5>{{ item[1] }}</h5>
+                <h6>{{ item[2] }}</h6>
                 <div class="text">
-                    愉快地享用完漫长的餐点后，如果桌布 椅套可以清洗，那可真是美事一桩。HENRIKSDAL 亨利克 可能 是我们最舒适的椅子了！
+                    {{ item[3] }}
                 </div>
                 <div class="price">
                     <span>RMB</span>
-                    <span>459.00</span>
+                    <span>{{ item[4]}}</span>
                 </div>
                 <div class="btn">Buy</div>
             </div>
         </div>
-        <div class="con2">
-            <div class="info">
-                <h5>HENRIKSDAL</h5>
-                <h6>椅子，桦木，格雷伯，白色</h6>
-                <div class="text">
-                    愉快地享用完漫长的餐点后，如果桌布 椅套可以清洗，那可真是美事一桩。HENRIKSDAL 亨利克 可能 是我们最舒适的椅子了！
-                </div>
-                <div class="price">
-                    <span>RMB</span>
-                    <span>459.00</span>
-                </div>
-                <div class="btn">Buy</div>
-            </div>
-            <div class="imgBox">
-                <img src="../static/img/index/h2.png" alt="" width="780">
-            </div>
-        </div>
+        {% endfor %}
     </div>
 <!--人气推荐-->
     <div class="recommend">
