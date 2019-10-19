@@ -1,0 +1,14 @@
+h3{
+    font-size:30px;
+    padding:0 50px;
+}
+.tableBox{
+    padding:0 50px;
+}
+
+.formBox{
+    width:500px;
+    height:auto;
+    border:1px solid #222222;
+    margin-left:50px;
+}
